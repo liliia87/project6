@@ -6,7 +6,7 @@ import CurrencyExchange from './currency_exchange.js';
 
 function clearFields() {
   $('.showErrors').text("");
-  $('.output').text("");
+  $('#output').text("");
   $('#amount').val("");
 }
 
@@ -17,6 +17,7 @@ function getElements(response,amount, currency){
     for (const [key, value] of Object.entries(body)){
       if (key === usaCUR){
         $('#output').append(`${amount} ${key} = ${value*amount} ${currency}`);
+        $('#output1').append(`1 ${usaCUR} = ${value} ${key}`);
       }
     }
   }
