@@ -1,9 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shape Tracker</title>
+  <title>Currency Exchange</title>
 </head>
 <body>
+  <div class="container">
+    <h1>Currency Exchange</h1>
+    <label for="currency">Choose the currency</label>
+    <div class="radio">
+      <label>
+        <input type="radio" name="currency" value="AUD" checked>
+        The Australian dollar
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="currency" value="BGN">
+        Bulgarian Lev
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="currency" value="CAD">
+        The Canadian dollar
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="currency" value="CHF">
+        Swiss Franc
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="currency" value="CNY">
+        Chinese yuan renminbi
+      </label>
+    </div>
+    <hr>
+    <label for="amount">Enter the amount in U.S. dollars</label>
+    <input id="amount" type="number">
+    <hr>
+    <label for="keyword">Data: </label>
+    <div id="output"></div>
+    <button class="btn-danger" id="searchResult">Exchange the money</button>
+   
+    <div class="showErrors"></div>
+    
+
+  </div>
 
 </body>
 </html>
