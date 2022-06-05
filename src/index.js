@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
- import './css/styles.css';
+import './css/styles.css';
 import CurrencyExchange from './currency_exchange.js';
 
 function clearFields() {
@@ -19,6 +19,9 @@ function getElements(response,amount, currency){
       if (key === currency){
         $('#output').append(`${amount} ${key} = ${value*amount} ${currency}`);
         $('#output1').append(`1 ${usaCUR} = ${value} ${key}`);
+      }
+      else {
+        $('.showErrors').text("The current value isn't allowed.");
       }
     }
   }
