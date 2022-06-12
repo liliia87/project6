@@ -3,16 +3,15 @@
 // }
 
 export default class CurrencyExchange {
-  static getExchange(){
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
-    .then(function(response){
+  static async getExchange(){
+    try{
+      const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`);
       if (!response.ok){
-        throw Error(response.statusText);
+        throw Error (response.statusText);
       }
       return response.json();
-    })
-    .catch(function(error){
-      return error;
-    })
+    } catch(error) {
+      return error.message;
+    }
   }
 }

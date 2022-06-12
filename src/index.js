@@ -11,20 +11,24 @@ function clearFields() {
   $('#amount').val("");
 }
 
-function getElements(response,amount, currency){
+function getElements(response, amount, currency){
   let usaCUR = 'USD';
-  if(response.conversion_rates){
-    let body = response.conversion_rates;
+  let body = response.conversion_rates;
+
+  if(body){
     for (const [key, value] of Object.entries(body)){
       if (key === currency){
         $('#output').append(`${amount} ${key} = ${value*amount} ${currency}`);
         $('#output1').append(`1 ${usaCUR} = ${value} ${key}`);
       }
-      else {
-        $('.showErrors').text("The current value isn't allowed.");
-      }
     }
+  } else {
+    $('.showErrors').text(`There was an error!`);
   }
+}
+async function makeApiCall(amount, currency){
+  const response = await CurrencyExchange.getExchange();
+  getElements(response, amount, currency);
 }
 
 $(document).ready(function(){
@@ -32,9 +36,6 @@ $(document).ready(function(){
     let currency = $("input:radio[name=currency]:checked").val();
     let amount = $('#amount').val();
     clearFields();
-    CurrencyExchange.getExchange()
-    .then(function(response){
-      getElements(response, amount, currency);
-    });
+    makeApiCall(amount, currency);
   });
 });
