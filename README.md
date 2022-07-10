@@ -1,7 +1,7 @@
 Project_6
 ##Authored by: Liliia Kryvelova https://github.com/liliia87/project6.git
 
-##*_This application organize a currency exchange. A user is able to choose wich currency it should be converted and then type in an amount (in U.S. dollars). The application will makean API call to the following exchange rate API._*
+##*_This application organizes a currency exchange. A user is able to choose wich currency it should be converted to and then type in an amount (in U.S. dollars). The application will make an API call to the following exchange rate API._*
 
 ##*_Technologies Used *Html *JQuery *JavaScript *Jest *Bootstrap *jquery *popper.js_*
 
